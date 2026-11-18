@@ -28,5 +28,20 @@
     </div></main>
     <footer class="site-footer"><div class="container footer-bottom"><span>© <span id="year">2026</span> NEXORA</span><a href="mailto:shivaverma17007@gmail.com">Contact support</a></div></footer>
   </div>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();(function(){var ua=navigator.userAgent||'';var title='Choose how to get NEXORA';var intro='We detected your device. Follow the matching steps below.';if(/iPhone|iPad|iPod/i.test(ua)){title='NEXORA on your iPhone or iPad';intro='Open in Safari, then use Share → Add to Home Screen.';}else if(/Android/i.test(ua)){title='NEXORA on your Android device';intro='Open in Chrome, then check the menu for Install app or Add to Home screen.';}else if(/Macintosh|Mac OS X/i.test(ua)){title='NEXORA on your Mac';intro='Use a supported browser install option, or Safari Add to Dock where available.';}else if(/Windows/i.test(ua)){title='NEXORA on your Windows PC';intro='Use the install icon in Chrome or Edge, if the app supports installation.';}document.getElementById('device-title').textContent=title;document.getElementById('device-intro').textContent=intro;})();</script>
-</body></html>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function(){
+      var ua = navigator.userAgent || '';
+      var title = 'Choose how to get NEXORA';
+      var intro = 'We detected your device. Follow the matching steps below.';
+      if (/iPhone|iPad|iPod/i.test(ua)) { title='NEXORA on your iPhone or iPad'; intro='Open in Safari, then use Share → Add to Home Screen.'; }
+      else if (/Android/i.test(ua)) { title='NEXORA on your Android device'; intro='Open in Chrome, then check the menu for Install app or Add to Home screen.'; }
+      else if (/Macintosh|Mac OS X/i.test(ua)) { title='NEXORA on your Mac'; intro='Use a supported browser install option, or Safari Add to Dock where available.'; }
+      else if (/Windows/i.test(ua)) { title='NEXORA on your Windows PC'; intro='Use the install icon in Chrome or Edge, if the app supports installation.'; }
+      document.getElementById('device-title').textContent = title;
+      document.getElementById('device-intro').textContent = intro;
+    })();
+  </script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
