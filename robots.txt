@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://nexora-official-website.shivaverma17007.workers.dev/sitemap.xml
+Sitemap: https://nexora-official-website-1.shivaverma17007.workers.dev/sitemap.xml
