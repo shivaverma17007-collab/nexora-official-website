@@ -1,0 +1,12 @@
+# NEXORA
+
+NEXORA is a productivity and self-development app. Current app feature areas: tasks, study, routines, trackers, journaling and mindful breathing.
+
+- Home: https://nexora-official-website.shivaverma17007.workers.dev/
+- Features: /features.html
+- About: /about.html
+- FAQ: /faq.html
+- Contact: /contact.html
+- Install guide: /install.html
+- Current app: https://nexora-2ab.pages.dev/
+- Privacy and Terms pages are drafts pending verification of actual data practices.
