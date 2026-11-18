@@ -1,12 +1,38 @@
 # NEXORA
 
-NEXORA is a productivity and self-development app. Current app feature areas: tasks, study, routines, trackers, journaling and mindful breathing.
+NEXORA is a productivity and self-development app designed to bring planning, learning, routines and personal reflection into one space.
 
-- Home: https://nexora-official-website.shivaverma17007.workers.dev/
-- Features: /features.html
-- About: /about.html
-- FAQ: /faq.html
-- Contact: /contact.html
-- Install guide: /install.html
-- Current app: https://nexora-2ab.pages.dev/
-- Privacy and Terms pages are drafts pending verification of actual data practices.
+## Current app areas
+- Tasks
+- Study
+- Routines
+- Trackers
+- Journaling
+- Mindful breathing
+- Focus Sprint
+- Discipline Sprints
+- Current Affairs
+- Past Analytics
+- Time Tools
+
+## Official website
+- Home: https://nexora-official-website-1.shivaverma17007.workers.dev/
+- Features: https://nexora-official-website-1.shivaverma17007.workers.dev/features.html
+- About: https://nexora-official-website-1.shivaverma17007.workers.dev/about.html
+- FAQ: https://nexora-official-website-1.shivaverma17007.workers.dev/faq.html
+- Contact: https://nexora-official-website-1.shivaverma17007.workers.dev/contact.html
+- Install guide: https://nexora-official-website-1.shivaverma17007.workers.dev/install.html
+
+## App
+- Open NEXORA: https://nexora-2ab.pages.dev/
+
+## Planned development
+- Personal profiles and an account centre
+- Optional sign-in with Google, Apple, phone and email
+- Guest-first access and safe guest-data continuity when connecting an account
+- Community and sharing concepts
+- NOVA AI concept
+
+Profile, account, community and NOVA AI items are planned development, not claims that these features are currently live. The coming-week profile/account items are development targets and may change after testing.
+
+Privacy Policy and Terms pages are drafts until actual production data practices and legal details have been verified.
