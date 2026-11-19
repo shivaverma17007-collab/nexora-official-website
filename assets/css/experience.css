@@ -1,0 +1,628 @@
+/* NEXORA visual experience layer
+   Loaded by assets/js/main.js. This file styles the interactive sections
+   without changing the existing page structure or app. */
+
+:root {
+  --nx-glass: rgba(18, 25, 55, .76);
+  --nx-glass-strong: rgba(15, 21, 47, .94);
+  --nx-stroke: rgba(174, 190, 255, .20);
+  --nx-soft-text: #c1c8e4;
+  --nx-violet: #a997ff;
+  --nx-cyan: #70e8f1;
+  --nx-shadow: 0 24px 70px rgba(0, 0, 0, .32);
+}
+
+html[data-nx-theme="day"] {
+  color-scheme: light;
+  --bg: #f5f4ff;
+  --bg-soft: #eeedff;
+  --panel: rgba(255,255,255,.78);
+  --panel-solid: #fff;
+  --text: #211d3c;
+  --muted: #625e7c;
+  --muted-2: #77728e;
+  --line: rgba(87, 78, 145, .18);
+  --nx-glass: rgba(255,255,255,.76);
+  --nx-glass-strong: rgba(255,255,255,.96);
+  --nx-stroke: rgba(91, 83, 155, .20);
+  --nx-soft-text: #5e5a79;
+  --nx-shadow: 0 24px 70px rgba(69, 62, 130, .14);
+}
+
+html[data-nx-theme="day"],
+html[data-nx-theme="day"] body {
+  background: #f5f4ff;
+  color: #211d3c;
+}
+
+html[data-nx-theme="day"] body::before {
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(168, 139, 255, .20), transparent 36%),
+    radial-gradient(ellipse at 88% 43%, rgba(76, 209, 224, .16), transparent 35%),
+    linear-gradient(145deg, #faf9ff, #f0f5ff 55%, #f9f3ff);
+}
+
+html[data-nx-theme="day"] .site-header,
+html[data-nx-theme="day"] .site-header.is-scrolled {
+  background: rgba(250, 249, 255, .88);
+  border-color: rgba(90, 80, 150, .14);
+}
+
+html[data-nx-theme="day"] .primary-nav,
+html[data-nx-theme="day"] .hero-lede,
+html[data-nx-theme="day"] .section-intro,
+html[data-nx-theme="day"] .feature-card p,
+html[data-nx-theme="day"] .page-hero p,
+html[data-nx-theme="day"] .nx-aqua-head p,
+html[data-nx-theme="day"] .nx-demo-card p,
+html[data-nx-theme="day"] .nx-roadmap-strip p {
+  color: #625e7d;
+}
+
+html[data-nx-theme="day"] .feature-card,
+html[data-nx-theme="day"] .nx-roadmap-card,
+html[data-nx-theme="day"] .nx-demo-card,
+html[data-nx-theme="day"] .nx-aquarium,
+html[data-nx-theme="day"] .nx-roadmap-strip {
+  color: #211d3c;
+  background: linear-gradient(145deg, rgba(255,255,255,.94), rgba(239,241,255,.91));
+  border-color: rgba(102, 91, 163, .17);
+  box-shadow: 0 18px 48px rgba(76, 68, 132, .10);
+}
+
+html[data-nx-theme="day"] .nx-aqua-section {
+  color: #211d3c;
+}
+
+html[data-nx-theme="day"] .nx-aqua-kicker,
+html[data-nx-theme="day"] .nx-demo-kicker,
+html[data-nx-theme="day"] .nx-roadmap-label,
+html[data-nx-theme="day"] .nx-playground-heading p {
+  color: #6d6596;
+}
+
+html[data-nx-theme="day"] .nx-aqua-actions button,
+html[data-nx-theme="day"] .nx-demo-actions button,
+html[data-nx-theme="day"] .nx-mood-options button {
+  color: #322b59;
+  background: rgba(255,255,255,.92);
+  border-color: rgba(93, 84, 158, .22);
+}
+
+/* Theme control: fixed, compact and always visible instead of sitting in page flow. */
+.nx-theme-toggle {
+  position: fixed;
+  z-index: 100;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 17px;
+  border: 1px solid rgba(199, 194, 255, .36);
+  border-radius: 999px;
+  color: #f8f7ff;
+  background: linear-gradient(115deg, #6250b8, #386e9c 58%, #238b9a);
+  box-shadow: 0 10px 28px rgba(27, 24, 66, .34), inset 0 1px 0 rgba(255,255,255,.25);
+  font: 700 13px/1.2 Inter, system-ui, sans-serif;
+  letter-spacing: .01em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.nx-theme-toggle span:first-child { font-size: 17px; }
+.nx-theme-toggle:hover { transform: translateY(-3px); box-shadow: 0 15px 32px rgba(27,24,66,.42); }
+.nx-theme-toggle:active { transform: scale(.96); }
+.nx-theme-toggle:focus-visible { outline: 3px solid var(--nx-cyan); outline-offset: 4px; }
+html[data-nx-theme="day"] .nx-theme-toggle {
+  color: #272144;
+  background: linear-gradient(115deg, #e5dcff, #c9eff5);
+  border-color: rgba(89, 80, 150, .24);
+}
+
+/* Birds perched on a branch in the home hero. The emoji text is hidden;
+   the art is drawn as clean vector-like silhouettes with layered gradients. */
+.home-hero { overflow: hidden; }
+.nx-birds {
+  position: absolute;
+  z-index: 3;
+  top: 5%;
+  right: 4%;
+  width: min(38%, 390px);
+  height: 205px;
+  pointer-events: none;
+  opacity: .98;
+}
+.nx-birds::before {
+  content: "";
+  position: absolute;
+  left: 3%;
+  right: 0;
+  top: 66%;
+  height: 8px;
+  border-radius: 100% 12px 80% 12px;
+  transform: rotate(-5deg);
+  background: linear-gradient(180deg, #b98a68 0%, #79513f 45%, #473044 100%);
+  box-shadow: 0 5px 8px rgba(0,0,0,.22);
+}
+.nx-birds::after {
+  content: "";
+  position: absolute;
+  left: 17%;
+  top: 43%;
+  width: 84px;
+  height: 52px;
+  border-left: 5px solid #8e6858;
+  border-radius: 50%;
+  transform: rotate(-24deg);
+  opacity: .85;
+}
+.nx-bird {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 43px;
+  height: 32px;
+  overflow: visible;
+  color: transparent;
+  font-size: 0;
+  pointer-events: auto;
+  cursor: pointer;
+  transform-origin: 50% 85%;
+  filter: drop-shadow(0 5px 5px rgba(0,0,0,.22));
+  -webkit-tap-highlight-color: transparent;
+}
+.nx-bird::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 34% 28%, rgba(255,255,255,.95) 0 5%, transparent 6%),
+    radial-gradient(ellipse at 54% 58%, #f7f5ff 0 35%, #c9d7f7 58%, #8d9fce 77%, transparent 79%);
+  clip-path: polygon(2% 60%, 22% 39%, 36% 12%, 49% 36%, 77% 15%, 63% 49%, 98% 55%, 66% 66%, 42% 91%, 24% 73%);
+}
+.nx-bird::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 7px;
+  top: 13px;
+  right: 1px;
+  border-radius: 0 80% 20% 0;
+  background: linear-gradient(90deg, #f4c17c, #f08e6d);
+  clip-path: polygon(0 0,100% 50%,0 100%);
+}
+.nx-bird:nth-child(1) { left: 9%; top: 52%; transform: rotate(-3deg) scale(.92); }
+.nx-bird:nth-child(2) { left: 38%; top: 47%; transform: rotate(5deg) scale(1.08); }
+.nx-bird:nth-child(3) { left: 66%; top: 55%; transform: rotate(-7deg) scale(.82); }
+.nx-bird:nth-child(4) { left: 83%; top: 42%; transform: rotate(4deg) scale(.95); }
+.nx-bird:active,
+.nx-bird:hover {
+  animation: nx-bird-flutter .62s ease-in-out;
+}
+.nx-bird:focus-visible { outline: 2px solid var(--nx-cyan); outline-offset: 4px; border-radius: 12px; }
+@keyframes nx-bird-flutter {
+  0%,100% { translate: 0 0; rotate: 0deg; }
+  20% { translate: 0 -13px; rotate: -9deg; }
+  45% { translate: 13px -22px; rotate: 13deg; }
+  70% { translate: 23px -9px; rotate: -8deg; }
+}
+
+/* Aquarium: a real illustrated tank rather than loose emoji and unstyled text. */
+.nx-aqua-section {
+  position: relative;
+  width: min(1120px, calc(100% - 40px));
+  margin: 76px auto 36px;
+  padding: clamp(18px, 3vw, 34px);
+  color: #f4f4ff;
+  border: 1px solid rgba(116, 207, 238, .20);
+  border-radius: 30px;
+  background:
+    radial-gradient(ellipse at 8% 3%, rgba(113, 96, 229, .16), transparent 37%),
+    radial-gradient(ellipse at 91% 100%, rgba(37, 195, 193, .15), transparent 42%),
+    linear-gradient(145deg, rgba(16, 24, 55, .90), rgba(8, 23, 42, .94));
+  box-shadow: var(--nx-shadow);
+}
+.nx-aquarium { position: relative; }
+.nx-aqua-head { max-width: 720px; margin: 0 auto 22px; text-align: center; }
+.nx-aqua-kicker {
+  color: #82e4ef;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .20em;
+}
+.nx-aqua-head h2 {
+  margin: 10px 0 10px;
+  color: #faf9ff;
+  font-size: clamp(25px, 4.4vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+}
+.nx-aqua-head h2::first-letter { color: #b7a6ff; }
+.nx-aqua-head p {
+  margin: 0 auto;
+  max-width: 620px;
+  color: #c0cbe4;
+  font-size: clamp(14px, 1.8vw, 17px);
+  line-height: 1.7;
+}
+.nx-tank {
+  position: relative;
+  isolation: isolate;
+  height: clamp(220px, 34vw, 340px);
+  min-height: 220px;
+  overflow: hidden;
+  border: 1px solid rgba(144, 224, 255, .42);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 17% 14%, rgba(154, 237, 255, .42), transparent 24%),
+    radial-gradient(ellipse at 80% 23%, rgba(139, 119, 255, .25), transparent 26%),
+    linear-gradient(180deg, #2a77a1 0%, #145b86 44%, #0c365c 100%);
+  box-shadow: inset 0 12px 35px rgba(219,250,255,.15), inset 0 -30px 45px rgba(0,10,32,.42), 0 16px 42px rgba(0,0,0,.22);
+}
+.nx-tank::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: .55;
+  background:
+    repeating-linear-gradient(105deg, transparent 0 48px, rgba(208,248,255,.08) 50px, transparent 53px 90px),
+    linear-gradient(180deg, transparent 60%, rgba(6,28,48,.12));
+}
+.nx-tank::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: -3%;
+  right: -3%;
+  bottom: -16px;
+  height: 58px;
+  border-radius: 50% 50% 0 0;
+  background: linear-gradient(180deg, #b69b77, #705a55 42%, #384858);
+  box-shadow: 0 -7px 22px rgba(179, 227, 238, .13);
+}
+.nx-fish {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  width: 70px;
+  height: 42px;
+  color: transparent;
+  font-size: 0;
+  border-radius: 58% 48% 48% 58%;
+  background: linear-gradient(160deg, #fff0b9 0%, #ffb65d 23%, #f47782 52%, #a94f9c 100%);
+  box-shadow: inset -7px -8px 12px rgba(30,30,77,.25), inset 4px 4px 10px rgba(255,255,255,.58), 0 8px 18px rgba(0,0,0,.22);
+  transform-origin: center;
+}
+.nx-fish::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 13px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff 0 18%, #1a2542 24% 70%, #0a142d 72%);
+  box-shadow: 0 0 0 2px rgba(255,255,255,.28);
+}
+.nx-fish::after {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 6px;
+  width: 28px;
+  height: 30px;
+  background: linear-gradient(145deg, #ffce86, #d95e95 70%);
+  clip-path: polygon(100% 50%, 0 0, 17% 50%, 0 100%);
+  filter: drop-shadow(0 3px 3px rgba(0,0,0,.18));
+}
+.fish-one { left: 13%; top: 34%; animation: nx-fish-swim 8.5s ease-in-out infinite; }
+.fish-two { left: 56%; top: 19%; width: 57px; height: 35px; transform: scaleX(-1); background: linear-gradient(155deg,#d5f9ff,#58d6e9 42%,#4175d5 100%); animation: nx-fish-swim 10s ease-in-out -3s infinite; }
+.fish-three { left: 36%; top: 63%; width: 48px; height: 34px; background: linear-gradient(145deg,#fff1c8,#f8a34e 43%,#e66c54); animation: nx-fish-swim 7.2s ease-in-out -1s infinite; }
+.fish-four { right: 12%; top: 55%; width: 62px; height: 39px; transform: scaleX(-1); background: linear-gradient(155deg,#e8d9ff,#a994f5 45%,#5979d4); animation: nx-fish-swim 9.5s ease-in-out -4s infinite; }
+.nx-plant {
+  position: absolute;
+  z-index: 2;
+  bottom: 30px;
+  width: 15px;
+  height: 90px;
+  border-radius: 100% 0 100% 0;
+  background: linear-gradient(90deg, #1a8e79, #72d7a8 48%, #155e69);
+  transform-origin: bottom center;
+  filter: drop-shadow(0 4px 4px rgba(0,0,0,.22));
+}
+.nx-plant::before,
+.nx-plant::after {
+  content: "";
+  position: absolute;
+  width: 17px;
+  height: 58px;
+  border-radius: 100% 0 100% 0;
+  background: linear-gradient(90deg, #176e70, #68d49c 58%, #174c63);
+  transform-origin: bottom center;
+}
+.nx-plant::before { left: -10px; bottom: 15px; transform: rotate(-35deg); }
+.nx-plant::after { right: -12px; bottom: 29px; transform: rotate(35deg) scale(.85); }
+.plant-one { left: 5%; height: 104px; transform: rotate(-8deg); animation: nx-seaweed 4s ease-in-out infinite; }
+.plant-two { right: 7%; height: 120px; transform: rotate(11deg); animation: nx-seaweed 4.8s ease-in-out -1s infinite; }
+.plant-three { left: 23%; height: 62px; transform: rotate(8deg); opacity: .78; animation: nx-seaweed 4.4s ease-in-out -2s infinite; }
+.nx-bubble {
+  position: absolute;
+  z-index: 2;
+  bottom: -18px;
+  width: 13px;
+  height: 13px;
+  border: 1px solid rgba(226,250,255,.82);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.85), rgba(159,236,255,.18) 40%, rgba(94,206,236,.08));
+  box-shadow: inset -2px -2px 4px rgba(255,255,255,.22), 0 0 13px rgba(147,236,255,.28);
+  animation: nx-bubble-rise 7s linear infinite;
+}
+.bubble-one { left: 24%; animation-delay: -1s; }
+.bubble-two { left: 48%; width: 9px; height: 9px; animation-delay: -4s; }
+.bubble-three { left: 72%; width: 17px; height: 17px; animation-delay: -2.5s; }
+.bubble-four { left: 87%; width: 7px; height: 7px; animation-delay: -5s; }
+.nx-tank.is-paused *,
+.nx-tank.is-paused *::before,
+.nx-tank.is-paused *::after { animation-play-state: paused !important; }
+
+.nx-aqua-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+.nx-aqua-actions button,
+.nx-demo-actions button {
+  min-height: 44px;
+  padding: 0 17px;
+  border: 1px solid rgba(165, 197, 255, .30);
+  border-radius: 999px;
+  color: #f8f8ff;
+  background: linear-gradient(115deg, rgba(114, 93, 207, .60), rgba(38, 139, 164, .56));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 8px 20px rgba(0,0,0,.14);
+  font: 700 13px/1.2 Inter, system-ui, sans-serif;
+  cursor: pointer;
+  transition: transform .18s ease, filter .18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.nx-aqua-actions button:hover,
+.nx-demo-actions button:hover { transform: translateY(-2px); filter: brightness(1.12); }
+.nx-aqua-actions button:active,
+.nx-demo-actions button:active { transform: scale(.97); }
+.nx-aqua-note {
+  flex: 1 1 200px;
+  color: #c1d7e9;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Roadmap and mini-interactions: deliberate cards, readable labels and spacing. */
+.nx-roadmap-strip,
+.nx-playground {
+  width: min(1120px, calc(100% - 40px));
+  margin: 38px auto;
+}
+.nx-roadmap-strip {
+  padding: clamp(22px, 3vw, 36px);
+  border: 1px solid var(--nx-stroke);
+  border-radius: 26px;
+  color: #f4f2ff;
+  background: linear-gradient(135deg, rgba(28, 29, 69, .93), rgba(12, 40, 62, .91));
+  box-shadow: var(--nx-shadow);
+}
+.nx-roadmap-top { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; justify-content: space-between; }
+.nx-roadmap-label { color: #9fdde9; font-size: 11px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+.nx-roadmap-target {
+  padding: 6px 11px;
+  border: 1px solid rgba(127, 228, 213, .25);
+  border-radius: 999px;
+  color: #a9f0d9;
+  background: rgba(78, 205, 176, .10);
+  font-size: 11px;
+  font-weight: 700;
+}
+.nx-roadmap-strip h2 {
+  margin: 15px 0 10px;
+  color: #fff;
+  font-size: clamp(24px, 4vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -.045em;
+}
+.nx-roadmap-strip p { max-width: 760px; color: #c3c6e0; line-height: 1.75; }
+.nx-roadmap-pills { display: flex; flex-wrap: wrap; gap: 9px; margin: 22px 0 13px; }
+.nx-roadmap-pills span {
+  padding: 8px 12px;
+  border: 1px solid rgba(178, 183, 247, .18);
+  border-radius: 999px;
+  color: #e7e7ff;
+  background: rgba(255,255,255,.055);
+  font-size: 12px;
+}
+.nx-roadmap-strip .nx-roadmap-foot { margin: 16px 0 0; color: #969dbd; font-size: 12px; }
+
+.nx-playground { padding: 14px 0 24px; }
+.nx-playground-heading { margin-bottom: 20px; text-align: center; }
+.nx-playground-heading h2 {
+  margin: 12px 0 8px;
+  color: var(--text);
+  font-size: clamp(25px, 4.5vw, 42px);
+  line-height: 1.13;
+  letter-spacing: -.045em;
+}
+.nx-playground-heading p { color: #a9acc9; font-size: 14px; }
+.nx-demo-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+.nx-demo-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--nx-stroke);
+  border-radius: 24px;
+  color: #f4f2ff;
+  background: linear-gradient(145deg, rgba(27, 30, 66, .91), rgba(13, 22, 48, .95));
+  box-shadow: 0 16px 42px rgba(0,0,0,.20);
+}
+.nx-demo-kicker { color: #8fe1ed; font-size: 10px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.nx-demo-card h3 { margin: 9px 0 8px; color: inherit; font-size: 21px; letter-spacing: -.03em; }
+.nx-demo-card p { color: #b8bddb; font-size: 13px; line-height: 1.65; }
+.nx-timer-display {
+  margin: 20px 0 17px;
+  color: #e4ddff;
+  font: 800 clamp(38px, 6vw, 54px)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .06em;
+  text-align: center;
+  text-shadow: 0 0 25px rgba(161, 139, 255, .36);
+}
+.nx-demo-actions { display: flex; gap: 9px; flex-wrap: wrap; }
+.nx-demo-note { margin: 14px 0 0; }
+.nx-mood-options { display: flex; flex-wrap: wrap; gap: 9px; margin: 20px 0 12px; }
+.nx-mood-options button {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(179, 188, 255, .23);
+  border-radius: 15px;
+  color: white;
+  background: rgba(255,255,255,.07);
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+.nx-mood-options button:hover { transform: translateY(-3px); }
+.nx-mood-options button[aria-pressed="true"] {
+  border-color: #8be4ed;
+  background: linear-gradient(145deg, rgba(154,128,255,.32), rgba(81,210,219,.22));
+  box-shadow: 0 0 0 3px rgba(108,219,228,.10);
+}
+
+.nx-feature-extra { padding: 56px 0 90px; }
+.nx-feature-extra > .container + .container { margin-top: 52px; }
+.nx-feature-extra h2 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: clamp(27px, 4vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -.045em;
+}
+.nx-section-intro {
+  max-width: 720px;
+  margin: 0 0 26px;
+  color: #a9acc9;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.nx-roadmap-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 15px; }
+.nx-roadmap-card {
+  position: relative;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(176, 182, 245, .17);
+  border-radius: 20px;
+  color: #f2f1ff;
+  background: linear-gradient(145deg, rgba(26, 29, 64, .88), rgba(12, 20, 44, .94));
+  box-shadow: 0 12px 30px rgba(0,0,0,.16);
+}
+.nx-card-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 17px;
+  border: 1px solid rgba(191, 180, 255, .22);
+  border-radius: 15px;
+  color: #d9d1ff;
+  background: linear-gradient(145deg, rgba(153,129,255,.22), rgba(86,210,225,.12));
+  font-size: 23px;
+}
+.nx-roadmap-card h3 { margin: 0 0 9px; color: inherit; font-size: 18px; line-height: 1.3; }
+.nx-roadmap-card p { min-height: 68px; margin: 0 0 16px; color: #b4bad7; font-size: 13px; line-height: 1.65; }
+.nx-status {
+  display: inline-flex;
+  padding: 6px 10px;
+  border: 1px solid rgba(109, 219, 193, .25);
+  border-radius: 999px;
+  color: #9ce8ca;
+  background: rgba(67, 194, 150, .10);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+.nx-status.status-week { color: #c8beff; border-color: rgba(174,151,255,.28); background: rgba(145,119,255,.11); }
+.nx-status.status-future { color: #a6d7ed; border-color: rgba(115,199,237,.25); background: rgba(86,177,220,.10); }
+
+html[data-nx-theme="day"] .nx-roadmap-strip h2,
+html[data-nx-theme="day"] .nx-roadmap-card h3,
+html[data-nx-theme="day"] .nx-demo-card h3,
+html[data-nx-theme="day"] .nx-playground-heading h2,
+html[data-nx-theme="day"] .nx-feature-extra h2 { color: #211d3c; }
+html[data-nx-theme="day"] .nx-roadmap-pills span { color: #413b69; background: rgba(125,113,186,.08); border-color: rgba(100,90,155,.16); }
+html[data-nx-theme="day"] .nx-roadmap-foot,
+html[data-nx-theme="day"] .nx-roadmap-card p,
+html[data-nx-theme="day"] .nx-demo-card p,
+html[data-nx-theme="day"] .nx-section-intro { color: #686482; }
+
+/* Small screens: keep the scene compact and prevent controls from colliding. */
+@media (max-width: 700px) {
+  .nx-birds {
+    top: 1%;
+    right: 1%;
+    width: 47%;
+    height: 150px;
+    opacity: .88;
+  }
+  .nx-bird { width: 34px; height: 26px; }
+  .nx-birds::before { top: 68%; height: 6px; }
+  .nx-aqua-section,
+  .nx-roadmap-strip,
+  .nx-playground { width: calc(100% - 28px); }
+  .nx-aqua-section { margin-top: 42px; padding: 15px; border-radius: 23px; }
+  .nx-aqua-head { margin-bottom: 16px; text-align: left; }
+  .nx-aqua-head h2 { font-size: clamp(24px, 7vw, 32px); }
+  .nx-aqua-head p { font-size: 14px; }
+  .nx-tank { height: 230px; min-height: 230px; border-radius: 18px; }
+  .nx-fish { scale: .82; }
+  .nx-aqua-actions { gap: 8px; }
+  .nx-aqua-actions button { min-height: 42px; padding-inline: 13px; font-size: 12px; }
+  .nx-aqua-note { flex-basis: 100%; font-size: 12px; }
+  .nx-roadmap-strip { margin-block: 24px; padding: 21px; border-radius: 22px; }
+  .nx-roadmap-strip h2 { font-size: 26px; }
+  .nx-roadmap-pills { gap: 7px; }
+  .nx-roadmap-pills span { font-size: 11px; }
+  .nx-demo-grid { grid-template-columns: 1fr; gap: 12px; }
+  .nx-demo-card { padding: 20px; border-radius: 20px; }
+  .nx-roadmap-grid { grid-template-columns: 1fr; gap: 12px; }
+  .nx-roadmap-card { padding: 19px; }
+  .nx-roadmap-card p { min-height: 0; }
+  .nx-feature-extra { padding: 38px 0 64px; }
+  .nx-feature-extra > .container + .container { margin-top: 38px; }
+  .nx-theme-toggle { min-height: 42px; padding-inline: 14px; right: 12px; bottom: 12px; font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-bird, .nx-fish, .nx-plant, .nx-bubble {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  .nx-bird:active, .nx-bird:hover { animation: none; }
+}
+
+@keyframes nx-fish-swim {
+  0%,100% { translate: 0 0; rotate: 0deg; }
+  28% { translate: 13px -10px; rotate: -3deg; }
+  58% { translate: 25px 7px; rotate: 2deg; }
+  78% { translate: 8px 12px; rotate: -1deg; }
+}
+@keyframes nx-seaweed {
+  0%,100% { rotate: -4deg; }
+  50% { rotate: 6deg; }
+}
+@keyframes nx-bubble-rise {
+  0% { translate: 0 0; opacity: 0; }
+  12% { opacity: .78; }
+  90% { opacity: .55; }
+  100% { translate: 20px -285px; opacity: 0; }
+}
