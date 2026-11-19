@@ -19,6 +19,8 @@ NEXORA is a productivity and self-development app designed to bring planning, le
 - Home: https://nexora-official-website-1.shivaverma17007.workers.dev/
 - Features: https://nexora-official-website-1.shivaverma17007.workers.dev/features.html
 - About: https://nexora-official-website-1.shivaverma17007.workers.dev/about.html
+- Vision: https://nexora-official-website-1.shivaverma17007.workers.dev/vision.html
+- Calm Corner: https://nexora-official-website-1.shivaverma17007.workers.dev/calm.html
 - FAQ: https://nexora-official-website-1.shivaverma17007.workers.dev/faq.html
 - Contact: https://nexora-official-website-1.shivaverma17007.workers.dev/contact.html
 - Install guide: https://nexora-official-website-1.shivaverma17007.workers.dev/install.html
@@ -26,13 +28,11 @@ NEXORA is a productivity and self-development app designed to bring planning, le
 ## App
 - Open NEXORA: https://nexora-2ab.pages.dev/
 
-## Planned development
+## Planned development (not live-feature claims)
 - Personal profiles and an account centre
 - Optional sign-in with Google, Apple, phone and email
 - Guest-first access and safe guest-data continuity when connecting an account
 - Community and sharing concepts
 - NOVA AI concept
 
-Profile, account, community and NOVA AI items are planned development, not claims that these features are currently live. The coming-week profile/account items are development targets and may change after testing.
-
-Privacy Policy and Terms pages are drafts until actual production data practices and legal details have been verified.
+The privacy and terms pages remain drafts until production data practices and legal details have been verified.
